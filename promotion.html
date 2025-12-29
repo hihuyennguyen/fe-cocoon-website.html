@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cocoon</title>
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- setup css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- setup googlefonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bitcount+Prop+Single+Ink:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+
+
+    <!-- setup fontawesome cho icon-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- setup sync css voi index -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/top-banner.css">
+    <link rel="stylesheet" href="css/product-list.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/navigator.css">
+    <link rel="stylesheet" href="css/login.css">
+
+    <!-- input script jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <style>
+        @media (max-width: 576px) {
+        .promotion-container {
+            margin-top: 95px;
+        }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header" id="header">
+        <!-- <div class="container"> -->
+        <div class="notice">
+            <a href="#" class="notice-link">Tận hưởng giao hàng miễn phí toàn quốc với hoá đơn từ 99.000đ</a>
+            <a href="#" class="notice-link-1">Miễn phí giao hàng với hoá đơn từ 99.000đ</a>
+        </div>
+        <div class="navbar-wrapper" id="navbar">
+            <!-- tạo nút bật tắt navbar trên mobile/ hamburger -->
+            <div id="toggleNavbarButton" onclick="toggleNavbarMenu()">
+                <i class="fa fa-bars"></i>
+            </div>
+            <div class="logo-mobile">
+                <a href="index.html">
+                    <img src="image/logo_png.png" alt="Logo Cocoon">
+                </a>
+            </div>
+
+            <!-- code cũ -->
+            <div class="navbar-content">
+
+                <div class="navbar-left">
+                    <div class="search-wrapper">
+                        <i class="fa-solid fa-search search-icon"></i>
+                    </div>
+                    <a href="./product-list.html" class="nav-link">Sản phẩm</a>
+                    <a href="./promotion.html" class="nav-link">Khuyến mại</a>
+                    <a href="./cocoon.html" class="nav-link">Cocoon</a>
+                    <a href="./blog.html" class="nav-link">Bài viết</a>
+                </div>
+
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="image/logo_png.png" alt="Logo Cocoon">
+                    </a>
+                </div>
+
+                <div class="navbar-right">
+                    <a href="#" class="nav-link" 
+                                data-bs-toggle="modal" 
+                                data-bs-target="#loginModal">
+                                Đăng nhập
+                    </a>
+                    <a href="#social" class="nav-link">Liên hệ</a>
+                    <a href="#" class="nav-link">Giỏ hàng</a>
+                    <a href="#" class="nav-link">VI</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class = "promotion-container">
+        <div class = "col-12 mt-sm-5 mt-md-5 p-0">
+            <img src = "https://image.cocoonvietnam.com/uploads/IMG_4953_235b95969e.jpeg" class="d-block w-100" alt =""/>
+        </div>
+        <div class = " row promotion-wrapper m-3 d-flex justify-content-center align-items-center" id = "promotionWrapper">
+            <div class ="row col-12 col-lg-5 fs-6 p-0 d-flex justify-content-center align-items-center">
+                <img src ="https://image.cocoonvietnam.com/uploads/IMG_4950_01d0be7692.png" alt ="" class = "w-100"/>
+            </div>
+            <div class = "row col-12 col-lg-3 mt-5 p-0 d-flex justify-content-center align-items-center">
+                <h2 class ="fs-1 fw-normal align-items-center" style = "font-family:'vollkorn';">Nước tẩy trang sen Hậu Giang 500ml</h2>
+                <p class ="fs-2 align-items-center" style ="font-family: 'barlow condensed';">
+                    309.000 đ 
+                </p>
+            </div>            
+        </div>
+        <div class = " row promotion-wrapper m-3 d-flex justify-content-center align-items-center" id = "promotionWrapper">
+            <div class = "row col-12 col-lg-3 mt-5 p-0 d-flex justify-content-center align-items-center">
+                <h2 class ="fs-1 fw-normal align-items-center" style = "font-family:'vollkorn';">Nước tẩy trang sen Hậu Giang 500ml</h2>
+                <p class ="fs-2 align-items-center" style ="font-family: 'barlow condensed';">
+                    309.000 đ 
+                </p>
+            </div>            
+            <div class ="row col-12 col-lg-5 fs-6 p-0 d-flex justify-content-center align-items-center">
+                <img src ="https://image.cocoonvietnam.com/uploads/IMG_4949_e3ee06ca6d.png" alt ="" class = "w-100"/>
+            </div>
+        </div>
+
+        <!-- footer-banner -->
+        <div class="footer-banner">
+            <a href="#" class="footer-cover">
+                <img src="image/banner_4.jpg" alt=""  />
+            </a>
+        </div>
+
+        <!-- sliding-banner -->
+        <div class="main-carousel-container">
+            <button class="carousel-arrow left"><i class="fa-solid fa-chevron-left"></i></button>
+
+            <div class="sliding-banner">
+                <div class="sliding-slogan">
+                    <div class="slogan active">
+                        <p class="slogan1">"Cocoon - Mỹ phẩm thuần chay cho nét đẹp thuần Việt"</p>
+                        <p class="slogan2">elle việt nam</p>
+                    </div>
+                    <div class="slogan">
+                        <p class="slogan1">"Cocoon Việt Nam - Từ mầm xanh làm đẹp đến giải thưởng danh giá tại ELLE
+                            Beauty Rewards 2021"</p>
+                        <p class="slogan2">elle việt nam</p>
+                    </div>
+                </div>
+                <div class="sliding-dots"></div>
+            </div>
+
+            <button class="carousel-arrow right"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+        <!-- tạo navigator -->
+        <div class="navigator">
+            <nav class="nav-1">
+                <h3>Đặt hàng và hỗ trợ</h3>
+                <ul class="nav-list">
+                    <li class="nav-link"><a href="#">Hỏi đáp</a></li>
+                    <li class="nav-link"><a href="#">Hướng dẫn mua hàng</a></li>
+                    <li class="nav-link"><a href="#">Điều kiện chung</a></li>
+                    <li class="nav-link"><a href="#social">Liên hệ chúng tôi</a></li>
+                </ul>
+            </nav>
+            <nav class="nav-2">
+                <h3>Shop</h3>
+                <ul class="nav-list">
+                    <li class="nav-link"><a href="#newProduct">Sản phẩm mới</a></li>
+                    <li class="nav-link"><a href="#">Dưỡng da</a></li>
+                    <li class="nav-link"><a href="#">Tắm và dưỡng thể</a></li>
+                    <li class="nav-link"><a href="#">Combo/Bộ sản phẩm</a></li>
+                </ul>
+            </nav>
+            <nav class="nav-3">
+                <h3>Về Cocoon</h3>
+                <ul class="nav-list">
+                    <li class="nav-link"><a href="#">Câu chuyện thương hiệu</a></li>
+                    <li class="nav-link"><a href="#">Giá trị cốt lõi</a></li>
+                    <li class="nav-link"><a href="#">Trách nhiệm cộng đồng</a></li>
+                    <li class="nav-link"><a href="#">Tìm hiểu nguyên liệu</a></li>
+                </ul>
+            </nav>
+            <nav id="social" class="nav-4">
+                <h3>Mạng xã hội</h3>
+                <ul class="nav-list">
+                    <li class="nav-link"><a href="https://www.facebook.com/CocoonVietnamOfficial">Facebook</a></li>
+                    <li class="nav-link"><a href="https://www.instagram.com/cocoon.vietnam/">Instagram</a></li>
+                    <li class="nav-link"><a href="https://www.youtube.com/channel/UChaXgZ8kSpQDFgfm2X-kwTg">Youtube</a>
+                    </li>
+                    <li class="nav-link"><a href="https://www.tiktok.com/@cocoon.vietnam">Tiktok</a></li>
+                </ul>
+            </nav>
+        </div>
+    </main>
+    <script src="js/product-list.js"></script>
+    <script src="js/sliding-banner.js"></script>
+    
+    <!-- login form - sử dụng bootstrap Vertically centered modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered m-3 mx-sm-auto">
+            <!-- <div class="modal-dialog"> -->
+                <div class="modal-content px-3 px-sm-4 px-md-5">
+                    <div class="modal-header border-bottom-0 pt-4 pb-3">
+                        <div class="d-flex align-items-center me-auto">
+                            <h1 class="modal-title fs-6 text-body-emphasis" style="font-family: 'nunito';"
+                                id="modalDialogCenterLabel"> Đăng nhập
+                            </h1>
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <p class="welcom fs-3" style="font-family: 'Vollkorn';">Cocoon chào bạn trở lại!</p>
+                        <p class="account text-body-secondary" style ="font-family: 'nunito';">Bạn chưa có tài khoản? 
+                            <!-- chèn class bootstrap sign-up ở đây -->
+                            <a href="#" class = "sign-up" alt="" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#registrationModal">Tạo tài khoản</a>
+                        </p>
+                        <!-- nhập số điện thoại -->
+                        <form id="loginForm" novalidate>
+                            <div class="row d-flex align-items-center mb-3">
+                                <i class="fa-solid fa-phone"></i>
+                                <input type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại" style = "font-family: 'nunito';" oninput="validateOnInput(event)">
+                                <div class="error-message">Vui lòng nhập số điện thoại hợp lệ!</div>
+                            </div>
+                            <!-- nhập password -->
+                            <div class="row d-flex align-items-center mb-3">
+                                <i class="fa-solid fa-lock" ></i>
+                                <input type="password" id="password" name="password" placeholder="Nhập mật khẩu" style = "font-family: 'nunito';" oninput="validateOnInput(event)">
+                                <div class="error-message">Vui lòng nhập mật khẩu có ít nhất 8 ký tự, ít nhất 1 ký tự hoa, 1 ký tự thường và 1 số!</div>
+                            </div>
+                            <p class="forget-password">
+                                <a href="#" class = "create-password" alt ="" data-bs-dismiss="modal" data-bs-toggle="modal" 
+                                    data-bs-target="#forgetPasswordModal">Quên mật khẩu?</a>
+                            </p>
+                            <div class="save-password-container d-flex align-items-center">
+                                <input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input">                            
+                                <!-- <input type="checkbox" class="check-box"> -->
+                                <p class="save-password m-0">Ghi nhớ mật khẩu cho lần sau</p>
+                            </div>
+                            <button type="submit" class="button-login"> Đăng nhập </button>
+                        </form>
+                        <div class="option-login">
+                            <p class="otherlogintext">Hoặc đăng nhập bằng</p>
+                            <div class="social-login">
+                                <a href="#" class="social-icon apple">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/732px-Apple_logo_black.svg.png"
+                                        alt="apple-logo" />
+                                </a>
+                                <a href="#" class="social-icon google">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Google_Favicon_2025.svg/250px-Google_Favicon_2025.svg.png"
+                                        alt="gg-logo" />
+                                </a>
+                                <a href="#" class="social-icon facebook"><img
+                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/768px-2021_Facebook_icon.svg.png?20220821121039"
+                                        alt="fb-logo" /></a>
+                            </div>
+                        </div>
+                    </div>
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- sign-up form bootstrap modal  -->
+    <div class="modal fade" id="registrationModal" tabindex="-1" aria-labelledby="registrationModalLabel" aria-hidden="true">    
+        <div class="modal-dialog modal-dialog-centered m-3 mx-sm-auto" >
+                <!-- <div class="modal-dialog"> -->
+                <div class="modal-content px-2 px-sm-3 px-md-4 px-lg-5">
+
+                    <div class="modal-header border-bottom-0 pt-4 pb-3">
+
+                        <div class="d-flex align-items-center me-auto">
+                            <a 
+                                href="#" 
+                                class="text-dark me-3 header-icon-fix"
+                                data-bs-dismiss="modal"         
+                                data-bs-toggle="modal"          
+                                data-bs-target="#loginModal"    
+                            >
+                                <i class="bi bi-arrow-left fs-4"></i>
+                            </a>
+
+                            <h1 class="modal-title fs-6 text-body-emphasis mt-0 pt-0" style="font-family: 'nunito';"
+                            id="modalDialogCenterLabel">Đăng ký
+                            </h1>
+                        </div>
+
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <p class="main-text fs-5 fs-sm-4 fs-md-3" style="font-family: 'Vollkorn';">Xin hãy nhập số điện thoại. Cocoon sẽ gửi
+                            cho bạn mã xác minh vào điện thoại của bạn.</p>
+
+                        <div class="row p-3">
+                            <i class="fa-solid fa-phone"></i>
+                            <input type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại">
+                        </div>
+
+                        <div class ="d-grid gap-2 mt-4">
+                            <button type = "submit" class="verify-btn btn-lg p-2 p-sm-3 mb-2 bg-black text-white fs-5 fs-sm-4 fs-md-3"
+                                style="font-family: 'barlow condensed';">
+                                GỬI MÃ XÁC MINH
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            <!-- </div> -->
+        </div>
+    </div>
+    <!-- quên mật khẩu  -->
+    <div class="modal fade" id="forgetPasswordModal" tabindex="-1" aria-labelledby="forgetPasswordModalLabel" aria-hidden="true">    
+        <div class="modal-dialog modal-dialog-centered m-3 mx-sm-auto">
+            <!-- <div class="modal-dialog"> -->
+                <div class="modal-content px-2 px-sm-3 px-md-4 px-lg-5">
+
+                    <div class="modal-header border-bottom-0 pt-4 pb-3">
+
+                        <div class="d-flex align-items-center me-auto m-0">
+                            <a 
+                                href="#" 
+                                class="text-dark me-3 header-icon-fix"
+                                data-bs-dismiss="modal"         
+                                data-bs-toggle="modal"          
+                                data-bs-target="#loginModal"    
+                            >
+                                <i class="bi bi-arrow-left fs-4"></i>
+                            </a>
+
+                            <h1 class="modal-title fs-6 text-body-emphasis mt-0 pt-0" style="font-family: 'nunito';"
+                            id="modalDialogCenterLabel">Quên mật khẩu?
+                            </h1>
+                        </div>
+
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <p class="main-text fs-5 fs-sm-4 fs-md-3" style="font-family: 'Vollkorn';">Cocoon sẽ gửi
+                            cho bạn mã xác minh vào điện thoại của bạn.</p>
+
+                        <div class="row p-3">
+                            <i class="fa-solid fa-phone"></i>
+                            <input type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại">
+                        </div>
+
+                        <div class ="d-grid gap-2 mt-4">
+                            <button type = "submit" class="verify-btn btn-lg p-2 p-sm-3 mb-2 bg-black text-white fs-5 fs-sm-4 fs-md-3"
+                                style="font-family: 'barlow condensed';">
+                                GỬI MÃ XÁC MINH
+                            </button>
+                        </div>
+                    </div>
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+    <script src="./js/login.js"></script>
+    <script src="./js/hamburger.js"></script>
+    
+</body>
+
+</html>

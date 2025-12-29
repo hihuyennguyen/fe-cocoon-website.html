@@ -1,0 +1,411 @@
+/* header */
+#header { 
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999; /* giúp header nằm trên banner */
+        border-bottom: 1px solid #ddd;
+    background-color: #fcf9f4; /* nên có để không bị trong suốt */
+
+}
+
+
+/* thanh notice trên cùng */
+.notice {
+    background-color:black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 45px;
+}
+.notice a {
+    font-size: 14px;
+    font-family: 'nunito', sans-serif;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color 0.2s ease;
+}
+
+.notice a:hover {
+    border-bottom-color: #fff;
+}
+
+/* thanh navbar-wrapper */
+.navbar-wrapper {
+    width: 100%;
+    height: 85px;
+    background-color: #fcf9f4;
+        
+    display: flex;
+    align-items: center;
+}
+
+.navbar-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+    /* height: 86px; */
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'nunito', sans-serif;
+    color: rgba(31, 28, 23, var(--tw-text-opacity));
+    font-weight: 300;
+
+}
+.navbar-left {
+    order: 1;
+    display:flex;
+    align-items: center;
+    gap: 24px;
+    white-space: nowrap;
+    flex-grow: 1;
+}
+
+.navbar-right {
+    order: 3;
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 24px;
+    white-space: nowrap;
+    flex-grow: 1;
+}
+.navbar-left,
+.logo,
+.navbar-right {
+    /* Đặt cơ sở linh hoạt cho 3 phần tử con. 
+       flex: 1 cho phép chúng chia đều không gian còn lại, đảm bảo logo ở giữa. */
+    flex: 1; 
+}
+/* nội dung bên trong của thẻ <a> */
+.navbar-left >a,
+.navbar-right >a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    position: relative;
+
+}
+.navbar-left > a::after,
+.navbar-right > a::before {
+    content: "";
+    height: 1px;
+    background-color: grey;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    /* ease ease-in ease-out ease-in-out */
+    transition: all .35s ease;
+}
+.navbar-left > a:hover::after,
+.navbar-right > a:hover::before {
+    width: 100%;
+    /* text-decoration-thickness: 1px; */
+}
+
+/* nút tìm kiếm */
+.search-wrapper {
+    margin-right: 10px;
+}
+
+.search-icon {
+    cursor: pointer; 
+}
+.logo {
+    order: 2;
+    text-align: center;
+    width: 150px;
+    flex-shrink: 0;
+}
+
+.logo img {
+    width: auto;
+    height: 78px;
+    display: block;
+    margin: 0 auto; 
+}
+/* nút bật tắt navbar */
+/* ẩn nút navbar trên màn hình desktop */
+#toggleNavbarButton {
+    display: none; 
+}
+#toggleNavbarButton >i {
+    font-size: 1.6rem;
+    
+}
+.notice-link-1 {
+    display: none;
+}
+.logo-mobile {
+    display: none;
+}
+
+@media (max-width: 576px) {
+    /* set độ ẩn/hiện các thông tin cần có trên mobile */
+    #toggleNavbarButton {
+        display: block; 
+        padding-left: 10px;       
+    }
+    #header {
+        position: fixed;
+        width: 100%;
+        
+    }
+    /* thông tin các mục ở header */
+    .navbar-wrapper {
+        height: 61px;
+        position: relative;
+    }
+    .search-wrapper {
+        display: none;
+    }
+    .navbar-left,
+    .navbar-right {
+        flex-direction: column;
+        width: 100%;        
+    }
+    .navbar-content {
+        display: none;
+        position: fixed;
+        top: 94px; /* Below header (33px notice + 61px navbar) */
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 94px);
+        background-color: #fcf9f4;
+
+        flex-direction: column;
+        justify-content: flex-start;
+        /* padding: 30px 20px; */
+        overflow-x: auto;
+        z-index: 998;
+        
+    }
+    .navbar-content.active {
+        display: flex;
+    }
+    .navbar-left {
+        order: 1;
+        padding-top: 5px;
+        padding-bottom: 18px;
+        flex-grow: unset;
+    }
+        .navbar-right {
+        order: 2;
+        flex-grow: unset;
+        justify-content: initial;
+    }
+        /* Style menu links for mobile */
+    .navbar-left > a,
+    .navbar-right > a {
+        font-size: 18px;
+        /* padding: 10px 0; */
+        width: 100%;
+    }
+    body.menu-open {
+        overflow: hidden;
+    }
+
+    /* phần ribbon trên cùng "Miễn phí giao hàng */
+    .notice {
+        height: 33px;
+    }
+    .notice-link {
+        display: none;
+    }
+    .notice-link-1 {
+        display: block;
+        width: 100%;
+        text-align: center; 
+    }
+    .notice-link-1:hover {
+        text-decoration: underline;
+
+    }
+    /* logo */
+    .logo {
+        display: none;
+        flex-grow: unset;
+    }
+    .logo-mobile {
+        display: block;  
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%); /* Center it properly */
+        max-width: 120px;
+        /* flex-grow: 1; */
+    }
+    .logo-mobile img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* css cho login */
+
+/* tạo tài khoản */
+.account {
+  font-size: 12px;
+}
+.account a {
+  color: #E2B59A;
+}
+.account a:hover {
+  text-decoration: underline;
+}
+/* khu vực nhập thông tin đăng nhập */
+#loginModal .row,
+#registrationModal .row,
+#forgetPasswordModal .row  {
+position: relative;
+padding-left: 30px;
+
+}
+#loginModal .row input,
+#registrationModal .row input,
+#forgetPasswordModal .row input{
+  flex: 1;
+  width: 100%;
+  border-radius: 4px;
+  border: none;
+  font-size: 14px;
+  border-bottom: 1px solid #ECD5BC;  
+  padding: 10px ;
+}
+#loginModal .row > i,
+#registrationModal .row > i,
+#forgetPasswordModal .row > i {
+  color: #ECD5BC;
+  font-size: 14px;
+  position: absolute;
+  left: 0;
+  /* top: 50%;  */
+  transform: translateY (-50%);
+
+}
+input::placeholder {
+  color: #E2B59A;
+  font-size: 14px;
+  font-family: 'nunito';  
+}
+
+/* quên mật khẩu */
+.forget-password {
+  display: flex;
+  justify-content: flex-end;
+
+}
+.forget-password a {
+  color: #E2B59A;
+  font-size: 14px;
+  font-family: 'nunito';
+}
+.forget-password a:hover{
+  text-decoration: underline;
+}
+/* lưu mật khẩu cho lần sau */
+.save-password-container {
+  display: flex;
+  align-items: center;
+}
+.check-box {
+  width: 15px;
+  height: 15px;
+  background-color: rgba(254, 251, 244);
+  
+}
+.save-password {
+  font-size: 12px;
+  padding-left: 10px;
+   font-size: 14px;
+  font-family: 'nunito';
+  color: black;
+}
+/* nút đăng nhập */
+.button-login {
+ border: none;
+ padding: 15px;
+ width: 100%;
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+  font-size: 22px;
+  font-family: 'nunito';
+  border-radius: 4px;
+  margin: 25px 0;
+  transition: all 0.35s ease-in;
+  font-family: 'barlow condensed';
+}
+.button-login:hover {
+  background-color: grey;
+  cursor: pointer;
+}
+/* dòng login bằng các options khác */
+/* dòng login bằng các options khác */
+.option-login {
+  display: flex;
+  padding-bottom: 50px;
+  align-items: end;
+  padding-top: 10px;
+}
+.otherlogintext {
+  font-size: 12px;
+  font-family: 'nunito';
+  color: grey;
+  padding-right: 40px;
+}
+
+.social-login {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.social-login .social-icon {
+  justify-content: center;
+  
+  width: 40px; /* Chiều rộng mặc định cho tất cả */
+  height: 40px; /* Chiều cao mặc định cho tất cả */
+  display: block;
+  
+  
+}
+.social-login .social-icon img {
+  max-width: 100%;
+  /* height: auto; */
+  padding-left: 10px;
+  
+}
+.social-login .social-icon.apple {
+  width: 34px;
+}
+
+/* css báo lỗi đăng nhập */
+.row.error > input {
+    /* border-color: red; */
+    border-bottom: 1px solid #BB0000; 
+    border-radius: 4px;
+    padding: 12px 10px;
+}
+.error-message {
+    color: #BB0000;
+    display: none;
+    font-family: 'nunito';
+    font-size: 12px;
+    font-style: italic;
+}
+
+.error-message.active {
+    display: block;
+}
+
+input::placeholder.active {
+  color: #E2B59A;
+  font-size: 14px;
+  font-family: 'nunito';  
+}

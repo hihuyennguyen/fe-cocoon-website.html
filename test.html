@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product-detail</title>
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- setup css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- setup googlefonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alan+Sans:wght@300..900&family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bitcount+Prop+Single+Ink:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Vollkorn:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+
+
+    <!-- setup fontawesome cho icon-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+    <!-- setup sync css voi index -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/top-banner.css">
+    <link rel="stylesheet" href="css/product-list.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/navigator.css">
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="js/header.js" defer />
+    <!-- <link rel="stylesheet" href="js/header.js" defer /> -->
+
+    <!-- input script jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    
+    <script src="./js/header.js" defer></script>
+
+
+    <style>
+        .container {
+            margin-top: 90px;
+        }
+        .product_category {
+            font-family: 'Vollkorn';
+            color: rgba(197, 162, 93);
+        }
+
+        .product_name {
+            font-family: 'Vollkorn';
+        }
+
+        .product_price {
+            font-family: 'barlow condensed';
+        }
+
+        .product_info,
+        .condition,
+        .conponents {
+            font-family: 'nunito';
+        }
+
+        .product-icon {
+            width: 72px;
+        }
+
+        .product-icon img {
+            max-width: 100%;
+            padding: 20px;
+        }
+
+        .atc-link {
+            font-family: 'Barlow Semi Condensed';
+            transition: all .35s ease;
+        }
+
+        /* .add-to-cart {
+            transition: all .35s ease;
+        }
+        .add-to-cart >a:hover{
+            background-color: grey;
+        } */
+        .desc_banner {
+            width: 100%;
+        }
+
+        .desc_banner img {
+            max-width: 100%;
+        }
+
+        .rating-summary {
+            margin: 0;
+        }
+
+        .heart-group {
+            font-size: 1.25rem;
+            line-height: 1;
+            white-space: nowrap;
+        }
+
+        .review-count {
+            /* Đảm bảo văn bản không bị tách ra */
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body>
+	<!-- header: load content header ở file header.js -->
+	<header class="header" id="header"></header>
+    <main class="container">
+        <!-- carousel + general info -->
+        <div class="row" id="carouselGeneralInfo">
+            <!-- tạo class mà thông tin chiếm 12 cột (tức là merge chung 12 cột vào làm 1) -->
+            <!-- tạo class chứa ảnh chạy slide phía bên trái màn hình -->
+            <div class="col-12 col-lg-6" id="carouselWrapper">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-theme="dark">
+                    <!-- cac nut dieu huong ben duoi-->
+                    <!-- <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div> -->
+                    <!-- anh san pham -> input anh vao cac the img -->
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="./image/product-detail/product_1/product_1.jpg" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./image/product-detail/product_1/Hinh_buoi_240618_b42356057e.jpg"
+                                class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./image/product-detail/product_1/Hair_B_Avatar_Website_KV_Suboi_Website_1_1f6db8c177.jpg"
+                                class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <!-- prev & next btn -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <!-- tạo thông tin info bên phải màn hình -->
+            <div class="col-12 col-lg-6" id="generalInfoWrapper">
+                <div class="row">
+                    <div class="col-12" id="generalInfoTop">
+                        <div class="product_category fs-6 ">Chăm sóc tóc . Nước dưỡng tóc</div>
+                        <div class="product_name fs-2 fw-normal mt-4">Nước dưỡng tóc tinh dầu bưởi 140ml</div>
+                        <div class="product_price fs-4 mt-2">162.000 đ</div>
+                        <div class="product_info fs-6 fw-light mt-2 ">Sản phẩm treatment dành cho tóc, phù hợp với tình
+                            trạng tóc rụng, tóc yếu, tóc thưa mỏng.
+                            Sản phẩm có thành phần từ tinh dầu bưởi Việt Nam truyền thống, Xylishine, Vitamin B5,
+                            Baicapil và Bisabolol.
+                            Nước dưỡng tóc tinh dầu bưởi giúp ngăn ngừa 60% nguyên nhân rụng tóc, làm gia tăng mật độ
+                            của tóc, từ đó giúp tóc dày lên trông thấy.
+                            Đồng thời, sản phẩm còn giúp nuôi dưỡng da đầu và cung cấp độ ẩm cho tóc.
+                        </div>
+                        <div class="condition mt-2">
+                            <h3 class="product_condition fs-6 fw-bold">Thích hợp với</h3>
+                            <p class="product_condition_text fs-6 fw-light">Tóc yếu gãy rụng</p>
+                        </div>
+                        <div class="conponents mt-2">
+                            <h3 class="product_conponents fs-6 fw-bold">Thành phần chính</h3>
+                            <p class="product_conponents_text fs-6 fw-light">Tinh dầu vỏ bưởi nguyên chất, Vitamin B5
+                                (Panthenol), Xylishine, Baicapil, Bisabolol.</p>
+                        </div>
+                        <div class="product-icon d-flex">
+                            <img src="https://image.cocoonvietnam.com/uploads/Cruelty_free_1_68dfae8a6f.svg"
+                                alt="icon" />
+                            <img src="https://image.cocoonvietnam.com/uploads/Vegan_2_68e43b2b9a.svg" alt="icon" />
+                            <img src="https://image.cocoonvietnam.com/uploads/Animal_Test_free_3_f74b2469e4.svg"
+                                alt="icon" />
+                        </div>
+                        <div
+                            class="add-to-cart d-flex flex-row justify-content-evenly mt-5 p-2 p-3 mb-2 bg-dark text-white rounded">
+                            <a href="#" class="atc-link fs-4 ">THÊM VÀO GIỎ HÀNG - 162.000 Đ</a>
+                            <i class="fa-solid fa-bag-shopping fs-3"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- description -->
+        <div class="row" id="descriptionWrapper">
+            <div class="col-12 col-lg-6" id="description_banner">
+                <div class="desc_banner">
+                    <img src="https://image.cocoonvietnam.com/uploads/Nuoc_Buoi_Moi_Edit_tach_nen_Size_Web_ef5c4fc93b.jpg"
+                        alt="" />
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 mt-0" id="description_content" style="background-color: #f9f5ef; height: 100vh">
+                <div class="desc_content pt-5 ">
+                    <p class="desc_content_text fs-2" style="font-family : 'Vollkorn';">Tinh dầu bưởi được trích ly
+                        từ vỏ bưởi chứa hàm lượng lớn limonene có khả năng ức chế mạnh mẽ
+                        enzyme 5-alpha reductase trên da đầu - nguyên nhân chính gây rụng tóc
+                    </p>
+                    <div class="col-12 d-flex justify-content-between mt-5" id="desc_content_detail">
+                        <div class="desc-content_1">
+                            <h3 class="desc_content_detail_1 fs-5 fw-medium" style="font-family: 'nunito';">Lý tưởng cho
+                            </h3>
+                            <ul class="reason fs-6 ps-2 fw-light mt-4" style="font-family: 'nunito';">
+                                <li class="reason_1">Tóc dễ gãy rụng</li>
+                                <li class="reason_1">Tóc chậm phát triển</li>
+                                <li class="reason_1">Tóc yếu</li>
+                            </ul>
+                        </div>
+                        <div class="desc-content_1 ms-5">
+                            <h3 class="desc_content_detail_1 fs-5 fw-medium" style="font-family: 'nunito';">Công dụng
+                            </h3>
+                            <ul class="reason fs-6 ps-2 fw-light mt-4" style="font-family: 'nunito';">
+                                <li class="reason_1">Ngăn ngừa 60% nguyên nhân rụng tóc</li>
+                                <li class="reason_1">Gia tăng mật độ của tóc, giúp tóc dày lên trông thấy</li>
+                                <li class="reason_1">Nuôi dưỡng da đầu và cung cấp độ ẩm cần thiết cho mái tóc</li>
+                                <li class="reason_1">Cung cấp dưỡng chất giúp tóc mềm mượt</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- feature -->
+        <div class="row" id="ratingWrapper">
+            <div class="col-12 col-lg-6" id="rating">
+                <h3 class="rating_text fs-6 fw-semibold" style="font-family: 'nunito';">Đánh giá từ khách hàng</h3>
+                <div class="row align-items-center">
+
+                    <div class="col-lg-6 col-md-4 ">
+                        <div class="display-1 fw-bold mb-0 " style="font-family: 'Cormorant Garamond';">5.0</div>
+                        <div class="rating-summary d-flex align-items-center">
+                            <div class="heart-group active">❤️ ❤️ ❤️ ❤️ ❤️</div>
+                            <span class="review-count ms-1">(1 Đánh giá)</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-8 ">
+                        <div class="rating-breakdown">
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="me-2">
+                                    <span class="heart-icon active">❤️</span>
+                                    <span class="heart-icon active">❤️</span>
+                                    <span class="heart-icon active">❤️</span>
+                                    <span class="heart-icon active">❤️</span>
+                                    <span class="heart-icon active">❤️</span>
+                                </div>
+                                <div class="progress flex-grow-1" style="height: 8px;">
+                                    <div class="progress-bar" role="progressbar"
+                                        style="width: 100%; background-color: #A9907E;" aria-valuenow="100"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <span class="ms-2">1</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-2 ">
+                                <div class="me-2">
+                                    <span class="heart-icon active">❤️</span>
+                                    <span class="heart-icon active">❤️</span>
+                                    <span class="heart-icon active">❤️</span>
+                                    <span class="heart-icon active">❤️</span>
+                                    <span class="heart-icon inactive"></span>
+                                </div>
+                                <div class="progress flex-grow-1" style="height: 8px;">
+                                    <div class="progress-bar" role="progressbar"
+                                        style="width: 0%; background-color: #A9907E;" aria-valuenow="0"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <span class="ms-2">0</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-2 ">
+                                <div class="me-2">
+                                    <span class="heart-icon active">❤️</span>
+                                    <span class="heart-icon active">❤️</span>
+                                    <span class="heart-icon active">❤️</span>
+                                    <span class="heart-icon inactive"></span>
+                                    <span class="heart-icon inactive"></span>
+                                </div>
+                                <div class="progress flex-grow-1" style="height: 8px;">
+                                    <div class="progress-bar" role="progressbar"
+                                        style="width: 0%; background-color: #A9907E;" aria-valuenow="0"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <span class="ms-2">0</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-2 ">
+                                <div class="me-2">
+                                    <span class="heart-icon active">❤️</span>
+                                    <span class="heart-icon active">❤️</span>
+                                    <span class="heart-icon inactive"></span>
+                                    <span class="heart-icon inactive"></span>
+                                    <span class="heart-icon inactive"></span>
+                                </div>
+                                <div class="progress flex-grow-1" style="height: 8px;">
+                                    <div class="progress-bar" role="progressbar"
+                                        style="width: 0%; background-color: #A9907E;" aria-valuenow="0"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <span class="ms-2">0</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-2 ">
+                                <div class="me-2">
+                                    <span class="heart-icon active">❤️</span>
+                                    <span class="heart-icon inactive"></span>
+                                    <span class="heart-icon inactive"></span>
+                                    <span class="heart-icon inactive"></span>
+                                    <span class="heart-icon inactive"></span>
+                                </div>
+                                <div class="progress flex-grow-1" style="height: 8px;">
+                                    <div class="progress-bar" role="progressbar"
+                                        style="width: 0%; background-color: #A9907E;" aria-valuenow="0"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <span class="ms-2">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-12 d-flex justify-content-center justify-content-lg-end mt-2 mt-lg-0">
+                <button class="btn btn-dark btn-lg py-3 px-5 fw-normal"
+                    style="background-color: #312E2B; border: none; font-family: 'barlow condensed';">
+                    VIẾT ĐÁNH GIÁ
+                </button>
+            </div>
+        </div>
+        <!-- review -->
+        <div class="row m-0 pt-4" style="background-color: #f9f5ef; " id="reviewWrapper">
+            <div class="col-lg-3 ">
+                <p class="review_name_1 mb-4 ">HÂN</p>
+                <p class="review_name_2 mb-2" style="font-family: 'nunito';">Da dầu</p>
+                <p class="review_name_3" style="font-family: 'nunito';">Số lần đánh giá: 1</p>
+            </div>
+            <div class="col-lg-6 pt-4 pb-4">
+                <div class="review-heart-icon">
+                    <span class="heart-icon active">❤️ ❤️ ❤️ ❤️ ❤️</span>
+                </div>
+                <div class="review-text-brief">
+                    <span class="review_text fs-3 fw-normal pt-3" style="font-family: 'vollkorn';">Sản phẩm giúp mình
+                        giảm rụng tóc</span>
+                    <br>
+                    <span class="review_text_detail fs-6 fw-light " style="font-family: 'nunito'; color:#A9907E ">Trước
+                        khi dùng sản phẩm mình đã có thời gian vật lộn với việc rụng tóc.
+                        Tóc mình có mấy mảng trắng lộ rõ luôn. Thấy trên mạng mng review sản phẩm này okie thì mình cũng
+                        mua thử thì hiệu quả thiệt nha.
+                        Mỗi lần gội xong cùng lắm rụng 1 2 cọng thoi.
+                        Sẽ ủng hộ brand dài dài
+                    </span>
+                </div>
+
+            </div>
+        </div>
+        <!--view other products tạm thời skip -->
+        <div class="row" id="viewOtherProduct"></div>
+
+    </main>
+		<!-- footer: load content footer ở file header.js -->
+	<footer class="footer" id="footer"></footer>
+
+    <script src="./js/login.js"></script>
+    <script src="./js/hamburger.js"></script>
+    
+</body>
+
+</html>

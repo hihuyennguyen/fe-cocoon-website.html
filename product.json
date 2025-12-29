@@ -1,0 +1,103 @@
+{"categories":[
+    {
+        "name" : "Tẩy tế bào chết",
+        "id" : "clean-product",
+        "products" : [
+        {
+            "name": "Túi Refill Đường Thốt Nốt An Giang Làm Sạch Da Chết Cơ Thể 200ML",
+            "info": "DA MƯỢT MÀ VÀ KHOẺ KHOẮN",
+            "price": "152.000 đ",
+            "avatar": "https://image.cocoonvietnam.com/uploads/Ecom_Body_TN_Tui_refill_thot_not_lam_sach_da_chet_co_the_200ml_78b36c4b57.jpg"
+        }, 
+        {
+            "name": "Túi Refill Cà Phê Đắk Lắk Làm Sạch Da Chết Cơ Thể 200ML",
+            "info": "CHO LÀN DA MỀM MỊN VÀ RẠNG RỠ",
+            "price": "113.000 đ",
+            "avatar": "https://image.cocoonvietnam.com/uploads/Ecom_Body_CP_Tui_refill_ca_phe_lam_sach_da_chet_co_the_200ml_0e56358763.jpg"
+        },
+        {
+            "name": "Đường thốt nốt An Giang làm sạch da chết cơ thể 200ml",
+            "info": "DA MƯỢT MÀ VÀ KHOẺ KHOẮN",
+            "price": "162.000 đ",
+            "avatar": "https://image.cocoonvietnam.com/uploads/Avatar_Website_Duong_Thot_Not_f3e1a92317.jpg"
+        }]
+    },
+    {
+        "name": "Sản phẩm bán chạy",
+        "id" : "best-seller",
+        "products":  [{
+                "name": "Nước dưỡng tóc tinh dầu bưởi 140ml",
+                "info": "CHO LÀN DA MỀM MỊN VÀ RẠNG RỠ",
+                "price": "162.000 đ",
+                "avatar": "https://image.cocoonvietnam.com/uploads/Avatar_Website_Nuoc_duong_toc_tinh_dau_buoi_140ml_Cai_tien_moi_240629_7819f9ba98.jpg"
+            }, 
+            {
+                "name": "Tinh chất bí đao 70ml - Tặng dung dịch chấm mụn bí đao 5ml",
+                "info": "SẠCH MỤN VÀ MỜ VẾT THÂM",
+                "price": "295.000 đ",
+                "avatar": "https://image.cocoonvietnam.com/uploads/Artboard_26_copy_5_ad72a3b272.png"
+            },
+            {
+                "name": "Mặt nạ nghệ Hưng Yên 100ml",
+                "info": "DA RẠNG RỠ VÀ MỊN MÀNG",
+                "price": "339.000 đ",
+                "avatar": "https://image.cocoonvietnam.com/uploads/Artboard_48_eb4d856178.jpg"
+            },
+            {
+                "name": "Nước tẩy trang bí đao 500ml",
+                "info": "LÀM SẠCH VÀ GIẢM DẦU",
+                "price": "290.000 đ",
+                "avatar": "https://image.cocoonvietnam.com/uploads/avatar_ntt_EBAW_2025_500ml_Artboard_1_6b5235d968.png"
+            },
+            {
+                "name": "Cà phê Đắk Lắk làm sạch da chết cơ thể 200ml",
+                "info": "CHO LÀN DA MỀM MỊN VÀ RẠNG RỠ",
+                "price": "123.000 đ",
+                "avatar": "https://image.cocoonvietnam.com/uploads/z4147355364575_e4b88c65711b8261d9c996e6797b60a1_83f203bec3.jpg"
+            }
+        ]
+    },
+    {
+        "name": "Sữa tắm",
+        "id": "shower-product",
+        "products" : [
+            {
+                "name": "Gel tắm đường thốt nốt An Giang 500ml",
+                "info": "LÀM SẠCH, CẤP ẨM, HƯƠNG THƠM THƯ GIÃN",
+                "price": "212.000 đ",
+                "avatar": "https://image.cocoonvietnam.com/uploads/gel_tam_hcn_website_69a9c3bfa2.png"
+            },
+            {
+                "name": "Gel tắm khuynh diệp & bạc hà 500ml",
+                "info": "CHO LÀN DA MỀM MỊN VÀ RẠNG RỠ",
+                "price": "241.000 đ",
+                "avatar": "https://image.cocoonvietnam.com/uploads/z4487535386831_5d2ae0d784dfe2e5188ff800f823607b_6e19452e83.jpg"
+            },
+            {
+                "name": "Gel tắm bí đao 310ml",
+                "info": "CHO LÀN DA MỀM MỊN VÀ RẠNG RỠ",
+                "price": "241.000 đ",
+                "avatar": "https://image.cocoonvietnam.com/uploads/29892185_slide_2_53b5c0cad9.jpg"
+            }
+        ]
+    },
+    {
+        "name": "Dưỡng thể",
+        "id" : "body-lotion",
+        "products": [
+            {
+                "name": "Sáp dưỡng ẩm đa năng sen Hậu Giang 30ml",
+                "info" : "DƯỠNG ẨM SÂU VÀO NHỮNG VÙNG DA RẤT KHÔ VÀ NHẠY CẢM",
+                "price": "192.000 đ",
+                "avatar" : "https://image.cocoonvietnam.com/uploads/Avatar_Website_Sap_Duong_Am_Sen_Hau_Giang_30ml_00f70209be.jpg"
+            },
+            {
+                "name": "Bơ dưỡng thể cà phê Đắk Lắk 200ml",
+                "info" : "CHO DA MỀM MẠI VÀ RẠNG RỠ",
+                "price": "241.000 đ",
+                "avatar" : "https://image.cocoonvietnam.com/uploads/Ecom_Body_CP_Bo_duong_the_200ml_4a14a2094c.png"
+            }
+
+        ]
+    }
+]}

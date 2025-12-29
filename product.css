@@ -1,0 +1,153 @@
+/* ĐÂY LÀ CSS CHO TOÀN BỘ DANH SÁCH SẢN PHẨM TẠI PRODUCT-LIST.HTML */
+
+/* container chứa các product-card */
+.product-grid-wrapper {
+    /* max-width: 1200px; */
+    padding: 20px;
+    margin: 0;
+    gap: 20px;
+    transition: transform 0.5s ease;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+h1 {
+    text-align: center;
+    font-family: 'barlow condensed';
+    color: rgba(197, 162, 93);
+    padding-top: 20px;
+    font-size: 36px;
+}
+.product-list .content_left {
+    width: 400px;
+}
+/* css cho thẻ product-card */
+.product-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    border-radius: 8px;
+    box-sizing: border-box;
+    width: 300px;
+    min-width: 300px;
+    /* padding-bottom: 60px; Thêm padding dưới để dành chỗ cho khu vực nút */
+    /* text-align: center; */
+
+    
+}
+/* css cho các thông tin của 1 sản phẩm */
+.product-card .info {
+    margin-top: auto;
+    padding: 0;
+    display: flex;
+    /* justify-content: space-between; */
+    flex-direction: column;
+    flex-grow: 1;
+    /* align-items: center; */
+}
+
+.product-card .product-title {
+    font-size: 16px;
+    font-family: 'nunito';
+    font-weight: bold;
+    margin-top: 10px;
+    min-height: 2em; 
+    line-height: 1em;
+    display: -webkit-box;
+    -webkit-line-clam: 2; /*GIỚI HẠN 2 DÒNG*/
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    
+}
+.product-card .product-info {
+    font-size: 12px;
+    font-family: 'nunito';
+    margin :0 ;
+    min-height: 2em; 
+    line-height: 1em;
+
+}
+.product-card .product-price {
+    font-size: 16px;
+    font-family: 'Barlow';
+    padding-top: 20px;
+}
+.product-card img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+/* css cho cụm giá - icon giỏ hàng */
+
+.product-card .price-icon {
+    /* position: absolute; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+
+}
+/* icon giỏ hàng */
+.product-card .icon-shopping {
+    background-color: rgb(237, 224, 204);
+    padding: 27px;
+    border-radius: 4px;
+    transition: all .35s ease;
+}
+
+/* thiết kế hover khi di chuột vào nút shopping */
+.product-card .icon-shopping:hover {
+    background-color: black;
+}
+.product-card .icon-shopping:hover i {
+    color: white;
+}
+/* setup hover */
+.product-card img:hover {
+    transform: scale(1.05);
+}
+
+.product-card .product-title:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 576px) {
+    main {
+        padding-top: 70px;
+    }
+     h1 {
+        display: none;
+    }
+    .product-grid-wrapper {
+        padding: 20px 10px; /* Reduce horizontal padding */
+        transition: transform 0.5s ease;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        max-width: 100%; /* Add this */
+    }
+    .product-card {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        min-width: 280px; /* Changed from 360px */
+        max-width: 85vw; /* Add this to prevent overflow */
+    }
+    .content_left {
+        text-align: center;
+        align-items: center;
+        width: 100%; /* Add this */
+        max-width: 100%; /* Add this */
+        padding: 20px 10px; /* Add padding */
+    }
+    .content_left_1 em {
+        font-size: 32px;  
+    }
+    .highlight_1 {
+        font-size: 32px;
+    }
+   
+
+}
